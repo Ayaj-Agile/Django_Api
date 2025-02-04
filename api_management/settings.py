@@ -76,16 +76,23 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "api_management.wsgi.application"
 
+import os
+import dj_database_url
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',            # Database name
-        'USER': 'postgres',            # Database user
-        'PASSWORD': 'Postgres@123',    # Password (note: URL-encoded @ becomes '%40')
-        'HOST': 'localhost',           # PostgreSQL server (localhost if local)
-        'PORT': '5432',                # Default PostgreSQL port
-    }
+    'default': dj_database_url.config(default=os.getenv("DATABASE_URL"))
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'postgres',            # Database name
+#         'USER': 'postgres',            # Database user
+#         'PASSWORD': 'Postgres@123',    # Password (note: URL-encoded @ becomes '%40')
+#         'HOST': 'localhost',           # PostgreSQL server (localhost if local)
+#         'PORT': '5432',                # Default PostgreSQL port
+#     }
+# }
 
 
 # Password validation
