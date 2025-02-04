@@ -148,4 +148,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # Specific Url
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173',  # React development server
+    'https://react-user-api-amber.vercel.app',  # React production build
 ]
