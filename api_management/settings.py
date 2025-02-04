@@ -29,8 +29,6 @@ DEBUG = True
 ALLOWED_HOSTS = ['django-api-i7xy.onrender.com', 'localhost', '127.0.0.1']
 
 
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -133,6 +131,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = "static/"
+
+# Add this in case you're using custom directories for static files:
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
